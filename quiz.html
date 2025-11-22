@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>小小英語測驗</title>
+</head>
+<body>
+  <h1>小小英語測驗</h1>
+  <p>問題：請輸入「圖書館」的英文：</p>
+
+  <input id="answerInput" type="text" placeholder="請輸入英文單字">
+  <button id="checkBtn">送出答案</button>
+
+  <p id="feedback"></p>
+
+  <script>
+    const correctAnswer = "library"; // 正確答案
+
+    document.getElementById("checkBtn").addEventListener("click", function () {
+      const userAnswer = document.getElementById("answerInput").value.trim().toLowerCase();
+      const feedbackEl = document.getElementById("feedback");
+
+      if (!userAnswer) {
+        feedbackEl.textContent = "先輸入一點什麼吧～";
+      } else if (userAnswer === correctAnswer) {
+        feedbackEl.textContent = "答對了！🍎";
+      } else {
+        feedbackEl.textContent = "還沒對，再想想看～";
+      }
+    });
+  </script>
+</body>
+</html>
